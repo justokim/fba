@@ -1,9 +1,9 @@
 "use client";
 
-import { screenWidth } from "../../hooks/useScreenWidth";
+import { useScreenWidth } from "../../hooks/useScreenWidth";
 
 export const History = () => {
-  const { width } = screenWidth();
+  const { width } = useScreenWidth();
 
   const isMobile = width < 768;
   return (

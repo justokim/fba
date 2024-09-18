@@ -3,12 +3,12 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { X } from "lucide-react";
-import { screenWidth } from "../hooks/useScreenWidth.js";
+import { useScreenWidth } from "../hooks/useScreenWidth.js";
 
 const Navbar = ({ routes, activeTab, setActiveTab }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const { width } = screenWidth();
+  const { width } = useScreenWidth();
 
   const isMobile = width < 768;
 

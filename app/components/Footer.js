@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-// import logoDark from "../public/logoDark.png";
 
 const Footer = ({ routes, activeTab, handleTabClick }) => {
   return (
