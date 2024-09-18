@@ -7,9 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        100: "40rem",
+        99: "36rem",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        manrope: ["Manrope", "sans-serif"],
+      },
+      scale: {
+        flip: "-1",
       },
     },
   },
