@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { screenWidth } from "../../hooks/screenWidth";
+import { screenWidth } from "../../hooks/useScreenWidth";
 
 export const Pictures = () => {
   return (

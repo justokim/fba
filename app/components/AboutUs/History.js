@@ -1,6 +1,6 @@
 "use client";
 
-import { screenWidth } from "../../hooks/screenWidth";
+import { screenWidth } from "../../hooks/useScreenWidth";
 
 export const History = () => {
   const { width } = screenWidth();
