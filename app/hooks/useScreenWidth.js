@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export const screenWidth = () => {
+export const useScreenWidth = () => {
   const [windowSize, getWindowSize] = useState({
     width: undefined,
     height: undefined,
