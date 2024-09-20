@@ -22,7 +22,8 @@ export const Founder = () => {
 
   const paragraphs = [
     "Vishrant Prabhu's basketball journey began at Gomes Elementary School and continued through his school years, including playing for the varsity team at Mission San Jose High School. Driven by a passion for basketball and empowering youth, he founded Fremont Basketball Academy in June 2020, sharing skills that he had learned with young students within a fun and engaging environment.",
-    `"I had a great coach and mentor growing up and wanted to motivate kids in a similar way. I played basketball throughout my childhood. The game of basketball has taught me valuable skills Pursuing this game has helped build discipline and perseverance. Not only that,basketball has allowed me to develop valuable teamwork, skills, and whether it is a pickup game at the gym or playing in a more structured environment elsewhere, the game gives me a lot of joy. I have a lot of experience working with kids as a basketball couch and as a summer camp counselor. I bring that experience to FBA."`,
+    `“I had a great coach and mentor growing up and wanted to motivate kids in a similar way. I played basketball throughout my childhood. The game of basketball has taught me valuable skills. Pursuing this game has helped build discipline and perseverance. Not only that, basketball has allowed me to develop valuable teamwork, skills, and whether it is a pickup game at the gym or playing in a more structured environment elsewhere, the game gives me a lot of joy. I have a lot of experience working with kids as a basketball couch and as a summer camp counselor. I bring that experience to FBA.”
+    `,
   ];
 
   return (

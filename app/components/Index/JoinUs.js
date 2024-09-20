@@ -12,10 +12,11 @@ export const JoinUs = ({ handleTabClick }) => {
           experience with passionate coaches!
         </div>
 
-        <button className="p-4 bg-[#6D31ED] text-white rounded-lg px-4 py-3 tracking-wide">
-          <Link href="/register" onClick={() => handleTabClick("Register")}>
-            Join Us
-          </Link>
+        <button
+          onClick={() => handleTabClick("Register")}
+          className="p-4 bg-[#6D31ED] text-white rounded-lg px-4 py-3 tracking-wide"
+        >
+          <Link href="/register">Join Us</Link>
         </button>
       </div>
     </div>

@@ -19,7 +19,7 @@ export const Testimonials = () => {
   return (
     <div className="py-16">
       <h1 className="text-4xl font-bold text-center py-8">
-        Hear What Parents Have To Say
+        Hear What Parents Have to Say
       </h1>
       <div className="flex lg:flex-row lg:h-full  justify-center items-center lg:space-x-6 lg:max-w-7xl mx-auto lg:space-y-0  max-w-lg flex-col space-y-4 md:max-w-2xl  lg:items-stretch">
         {testimony.map((person) => {

@@ -19,7 +19,7 @@ export const Team = () => {
   return (
     <div className="py-12">
       <h1 className="text-4xl font-bold text-center py-8">Meet The Team</h1>
-      <div className="flex lg:flex-row lg:space-x-8 lg:space-y-0 lg:max-w-7xl mx-auto justify-center flex-col space-y-4 max-w-md md:max-w-xl">
+      <div className="flex lg:flex-row lg:space-x-8 lg:space-y-0 lg:max-w-7xl mx-auto justify-center flex-col space-y-4 max-w-md md:max-w-xl ">
         {people.map((person) => {
           return (
             <div className="p-4  border-2 border-solid border-gray-200 rounded-lg ">

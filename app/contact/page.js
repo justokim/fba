@@ -56,7 +56,7 @@ const Contact = () => {
   return (
     <div className="w-full py-12 px-6">
       <div className="max-w-5xl mx-auto bg-slate-50  shadow-lg p-4 rounded">
-        <h1 className="text-5xl pb-4 text-center">Contact Uss</h1>
+        <h1 className="text-5xl pb-4 text-center">Contact Us</h1>
 
         <form onSubmit={submitForm} className="space-y-6">
           <div className="flex flex-col">
