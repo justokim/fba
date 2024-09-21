@@ -11,7 +11,12 @@ export const JoinUs = ({ handleTabClick }) => {
           Join Fremont Basketball Academy to elevate your child's basketball
           experience with passionate coaches!
         </div>
-        <Link onClick={() => handleTabClick("Register")} href="/register">
+        <Link
+          // onClick={() => {
+          //   handleTabClick("Register");
+          // }}
+          href="/register"
+        >
           <button className="p-4 bg-[#6D31ED] text-white rounded-lg px-4 py-3 tracking-wide">
             Join Us
           </button>

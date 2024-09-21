@@ -23,7 +23,6 @@ const Navbar = ({ routes, activeTab, setActiveTab }) => {
     }
   };
 
-  console.log(toggleMenu);
   return (
     <div className="h-20 z-10 fixed w-full bg-white  text-black shadow-xl">
       <div className="px-6 lg:px-8 flex items-center justify-between">
@@ -38,12 +37,12 @@ const Navbar = ({ routes, activeTab, setActiveTab }) => {
             />
           </Link>
 
-          <div className=" hidden md:flex md:items-center md:space-x-12 md:ml-12">
+          <div className="  hidden md:flex md:items-center md:space-x-12 md:ml-12">
             {routes.map((route) => (
               <Link
                 href={route.link}
                 key={route.link}
-                className={`text-lg
+                className={`text-lg 
               ${activeTab == route.name ? `text-[#6D31ED]` : `text-black`}
             `}
                 name={route.name}
