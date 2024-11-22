@@ -8,10 +8,6 @@ import { Team } from "./components/Index/Team";
 import { Location } from "./components/Index/Location";
 import { Testimonials } from "./components/Index/Testimonials";
 import { JoinUs } from "./components/Index/JoinUs";
-import { FreeClass } from "./components/Index/FreeClass";
-import FreeModal from "./components/Modal/FreeClass";
-
-
 export default function Home({ handleTabClick }) {
   return (
     <div className="w-full">
@@ -22,14 +18,12 @@ export default function Home({ handleTabClick }) {
       </Head>
 
       <main className=" mx-auto bg-slate-50 text-black  ">
-        <FreeModal/>
         <HeroSection />
         <Welcome />
         <Values />
         <Team />
         <Testimonials />
         <JoinUs handleTabClick={handleTabClick} />
-        <FreeClass/>
         <Location />
       </main>
     </div>
