@@ -56,16 +56,24 @@ const Navbar = ({ routes, activeTab, setActiveTab }) => {
         <div className="md:hidden " onClick={isOpen}>
           {toggleMenu ? <X /> : <Menu size={36} />}
         </div>
-        <Link
-          onClick={() => {
-            handleTab("Contact");
-          }}
-          href="/contact"
-        >
-          <button className=" md:block hidden px-7 py-3 bg-[#6D31ED] rounded-xl text-sm text-white tracking-wider">
-            Get in Touch
-          </button>
-        </Link>
+        <div className="flex flex-row space-x-8 justify-center items-center">
+           <div className="text-[#6D31ED] font-semibold text-lg">
+              First Class is Free!
+            </div>
+          <div>
+            <Link
+              onClick={() => {
+                handleTab("Contact");
+              }}
+              href="/contact"
+            >
+              <button className=" md:block hidden px-7 py-3 bg-[#6D31ED] rounded-xl text-sm text-white tracking-wider">
+                Get in Touch
+              </button>
+            </Link>
+          </div>
+       
+        </div>
       </div>
 
       {toggleMenu && (
