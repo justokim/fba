@@ -1,57 +1,69 @@
-import { Trophy } from "lucide-react";
-import { AlarmClock } from "lucide-react";
-import { LayoutPanelTop } from "lucide-react";
+import { Trophy, AlarmClock, Calendar } from "lucide-react";
 
 export const Values = () => {
   const values = [
     {
-      name: "Committed",
+      name: "Commitment",
       summary:
         "Dedicated to nurturing every player's potential, regardless of skill level, through consistent practice and personal attention.",
-      icon: <AlarmClock color="#6D31ED" />,
+      icon: AlarmClock,
     },
     {
       name: "Structured",
       summary:
         "Utilizing a well-defined curriculum that emphasizes fundamentals, sportsmanship, and strategic play to foster athletic, personal, and skill growth at all levels",
-      icon: <LayoutPanelTop color="#6D31ED" />,
+      icon: Calendar,
     },
     {
       name: "Passionate",
       summary:
         "Driven by a love for the game and a desire to inspire young athletes, infusing each session with energy and enthusiasm.",
-      icon: <Trophy color="#6D31ED" />,
+      icon: Trophy,
     },
   ];
-  return (
-    <div>
-      <h1 className="text-4xl font-bold text-center pb-8"> Core Values</h1>
 
-      <div className="flex flex-col  max-w-xs md:max-w-xl lg:max-w-6xl mx-auto justify-center space-y-52">
-        {" "}
-        <div className="flex lg:flex-row w-full flex-col items-center lg:space-y-0 space-y-4 lg:space-x-4  justify-center mx-auto">
-          {values.map((value) => {
-            return (
-              <div className="p-4 grow border-2 border-solid border-gray-100 rounded-lg">
-                <div className="flex flex-col justify-start items-start">
-                  <h2 className="font-semibold text-lg">{value.name}</h2>
-                  <a className="text-gray-400">{value.summary}</a>
-                </div>
-              </div>
-            );
-          })}
+  return (
+    <section className="relative bg-black py-24 md:py-32">
+      <div className="container mx-auto px-6">
+        <div className="mb-20">
+          <div className="flex items-center gap-6 mb-6">
+            <div className="h-1 w-16 bg-orange-600" />
+            <span className="font-heading text-sm font-bold uppercase tracking-wider text-orange-600">
+              Our Values
+            </span>
+          </div>
+          <h2 className="font-heading text-5xl font-black leading-tight tracking-tighter text-white md:text-7xl lg:text-8xl">
+            BUILT ON
+            <br />
+            <span className="text-orange-600">EXCELLENCE</span>
+          </h2>
         </div>
-        <div className="flex lg:flex-row lg:space-x-6 lg:justify-start justify-center space-x-6">
-          {values.map((value) => {
-            return (
-              <div className="flex flex-col space-y-2 items-center lg:items-start h-48 ">
-                <div className="">{value.icon}</div>
-                <a className="text-sm tracking-wide">{value.name}</a>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {values.map((value) => (
+            <div
+              key={value.name}
+              className="group relative overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-8 backdrop-blur-sm transition-all duration-300 hover:border-orange-600/50 hover:shadow-2xl hover:shadow-orange-600/20"
+            >
+              <div
+                className={`absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-500/5 opacity-0 transition-opacity group-hover:opacity-100`}
+              />
+
+              <div className="relative z-10">
+                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full border-2 border-orange-600/30 bg-orange-600/10 transition-all group-hover:border-orange-600 group-hover:bg-orange-600">
+                  <value.icon className="h-7 w-7 text-orange-600 transition-colors group-hover:text-black" />
+                </div>
+                <h3 className="mb-4 font-heading text-2xl font-black uppercase tracking-tight text-white">
+                  {value.name}
+                </h3>
+                <p className="text-balance leading-relaxed text-white/60 group-hover:text-white/80">
+                  {value.summary}
+                </p>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };

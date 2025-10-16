@@ -54,47 +54,51 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full py-12 px-6">
-      <div className="max-w-5xl mx-auto bg-slate-50  shadow-lg p-4 rounded">
-        <h1 className="text-5xl pb-4 text-center">Contact Us</h1>
+    <div className="w-full py-36 px-6 bg-black text-white">
+      <div className="max-w-5xl mx-auto shadow-lg p-4 rounded">
+        <h1 className="text-5xl pb-4 text-center font-bold">CONTACT US</h1>
 
-        <form onSubmit={submitForm} className="space-y-6">
+        <form onSubmit={submitForm} className="space-y-6 pt-8">
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Name</label>
             <input
-              className="bg-gray-200 outline-none p-1 rounded px-2"
+              className="bg-black border border-white/20 outline-none p-1 rounded px-2"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              placeholder="Your full name"
             />
           </div>
 
           <div className="flex flex-col">
-            <label className="text-lg pb-0.5">Email</label>
+            <label className="text-lg pb-0.5">Email *</label>
             <input
-              className="bg-gray-200 outline-none p-1 rounded px-2"
+              className="bg-black border border-white/20 outline-none p-1 rounded px-2"
               value={email}
               type="email"
               required
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="your.email@example.com"
             />
           </div>
 
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Subject</label>
             <input
-              className="bg-gray-200 outline-none p-1 rounded px-2"
+              className="bg-black border border-white/20 outline-none p-1 rounded px-2"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
+              placeholder="Subject"
             />
           </div>
 
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Message</label>
             <textarea
-              className="bg-gray-200 outline-none p-1 rounded px-2 resize-none"
+              className="bg-black border border-white/20 outline-none p-1 rounded px-2 resize-none"
               rows={3}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              placeholder="Tell us how we can help..."
             />
           </div>
 
@@ -102,7 +106,7 @@ const Contact = () => {
             {/* <div className="text-red-500 text-lg">*{errMsg}</div> */}
             <button
               type="submit"
-              className="outline-none bg-[#6D31ED] text-white px-4 py-2 rounded"
+              className="outline-none bg-orange-600 text-black font-bold px-4 py-2 rounded uppercase"
             >
               Send Message
             </button>

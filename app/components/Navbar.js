@@ -1,105 +1,79 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { X } from "lucide-react";
-import { useScreenWidth } from "../hooks/useScreenWidth.js";
 
-const Navbar = ({ routes, activeTab, setActiveTab }) => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-
-  const { width } = useScreenWidth();
-
-  const isMobile = width < 768;
-
-  const isOpen = () => {
-    setToggleMenu(!toggleMenu);
-  };
-
-  const handleTab = (route) => {
-    setActiveTab(route);
-    if (isMobile) {
-      setToggleMenu(!toggleMenu);
-    }
-  };
+const Navbar = ({ routes }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="h-20 z-10 fixed w-full bg-white  text-black shadow-xl">
-      <div className="px-6 lg:px-8 flex items-center justify-between">
-        <div className="flex md:space-x-10 justify-center items-center">
-          <Link href="/" className="relative w-36 h-20">
-            <Image
-              src="/logoDark.png"
-              alt="logo"
-              layout="fill"
-              objectFit="contain"
-              onClick={() => setActiveTab("Home")}
-            />
-          </Link>
-
-          <div className="  hidden md:flex md:items-center md:space-x-12 md:ml-12">
-            {routes.map((route) => (
-              <Link
-                href={route.link}
-                key={route.link}
-                className={`text-lg 
-              ${activeTab == route.name ? `text-[#6D31ED]` : `text-black`}
-            `}
-                name={route.name}
-                onClick={() => handleTab(route.name)}
-              >
-                {route.name}
-              </Link>
-            ))}
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
+      <nav className="container mx-auto flex h-20 items-center justify-between px-6">
+        <Link href="/" className="group flex items-center gap-3">
+          <div className="flex h-12 w-12 items-center justify-center rounded bg-orange-600 transition-transform group-hover:scale-105">
+            <span className="font-heading text-2xl font-black text-black">
+              F
+            </span>
           </div>
-        </div>
-        <div className="md:hidden " onClick={isOpen}>
-          {toggleMenu ? <X /> : <Menu size={36} />}
-        </div>
-        <div className="flex flex-row space-x-8 justify-center items-center">
-           <div className="text-[#6D31ED] font-semibold text-lg">
-              First Class is Free!
-            </div>
-          <div>
-            <Link
-              onClick={() => {
-                handleTab("Contact");
-              }}
-              href="/contact"
-            >
-              <button className=" md:block hidden px-7 py-3 bg-[#6D31ED] rounded-xl text-sm text-white tracking-wider">
-                Get in Touch
-              </button>
-            </Link>
+          <div className="hidden flex-col leading-none sm:flex">
+            <span className="font-heading text-sm font-black tracking-tight text-white">
+              FREMONT
+            </span>
+            <span className="font-heading text-xs font-bold tracking-wider text-orange-600">
+              BASKETBALL
+            </span>
           </div>
-       
-        </div>
-      </div>
+        </Link>
 
-      {toggleMenu && (
-        <div className="space-y-20 fixed inset-0 z-50 text-center  bg-slate-50 text-black flex flex-col pt-32  lg:hidden">
-          <button
-            onClick={isOpen}
-            className="absolute top-4 text-black right-4  text-3xl focus:outline-none"
-          >
-            <X />
-          </button>
+        {/* desktop */}
+        <div className="hidden items-center gap-8 md:flex">
           {routes.map((route) => (
             <Link
-              href={route.link}
               key={route.link}
-              className={`text-3xl 
-            ${activeTab == route.name ? `text-[#6D31ED]` : `text-black`}
-          `}
-              name={route.name}
-              onClick={() => handleTab(route.name)}
+              href={route.link}
+              className="font-heading text-xs font-bold uppercase tracking-wider text-white/70 transition-colors hover:text-white"
             >
               {route.name}
             </Link>
           ))}
+          <button className="font-heading text-xs font-bold rounded-md uppercase tracking-wider bg-orange-600 py-2.5 px-6">
+            <Link href="/register">Join Now</Link>
+          </button>
+        </div>
+
+        {/* mobile menu */}
+        <button
+          className="text-white md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+        </button>
+      </nav>
+
+      {/* mobile */}
+      {isOpen && (
+        <div className="border-t border-white/10 bg-black md:hidden">
+          <div className="container mx-auto space-y-1 px-6 py-6">
+            {routes.map((route) => (
+              <Link
+                key={route.link}
+                href={route.link}
+                className="block rounded px-4 py-3 font-heading text-sm font-bold uppercase tracking-wider text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                onClick={() => setIsOpen(false)}
+              >
+                {route.name}
+              </Link>
+            ))}
+            <button className="w-full font-heading text-xs font-black uppercase tracking-wider bg-orange-600">
+              <Link href="/register" onClick={() => setIsOpen(false)}>
+                Join Now
+              </Link>
+            </button>
+          </div>
         </div>
       )}
-    </div>
+    </header>
   );
 };
 

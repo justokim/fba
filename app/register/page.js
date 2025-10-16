@@ -69,19 +69,20 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full py-12 px-6">
-      <div className="max-w-5xl mx-auto bg-slate-50 p-4 shadow-lg rounded">
-        <h1 className="text-5xl pb-4 text-center">Register</h1>
+    <div className="w-full py-36 px-6 bg-black text-white">
+      <div className="max-w-5xl mx-auto p-4 shadow-lg rounded">
+        <h1 className="text-5xl pb-4 text-center font-bold">REGISTER</h1>
 
-        <form onSubmit={submitForm} className="space-y-6">
+        <form onSubmit={submitForm} className="space-y-6 pt-8">
           <div className="flex flex-col">
-            <label className="text-lg pb-0.5">Email</label>
+            <label className="text-lg pb-0.5">Email *</label>
             <input
               type="email"
               required
-              className="bg-gray-200 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="your.email@example.com"
             />
             <div
               className={
@@ -94,35 +95,38 @@ const Register = () => {
             </div>
           </div>
           <div className="flex flex-col">
-            <label className="text-lg pb-0.5">Parent Name</label>
+            <label className="text-lg pb-0.5">Parent Name *</label>
             <input
-              className="bg-gray-200 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
               value={parentname}
               onChange={(e) => setParentname(e.target.value)}
               required
+              placeholder="Parent full name"
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-lg pb-0.5">Child Name</label>
+            <label className="text-lg pb-0.5">Child Name *</label>
             <input
-              className="bg-gray-200 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
               value={childname}
               onChange={(e) => setChildname(e.target.value)}
               required
+              placeholder="Child full name"
             />
           </div>
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Age</label>
             <input
-              className="bg-gray-200 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
               value={age}
               onChange={(e) => setAge(e.target.value)}
+              placeholder="Age"
             />
           </div>
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Grade</label>
             <input
-              className="bg-gray-200 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
               value={grade}
               placeholder="4th grade"
               onChange={(e) => setGrade(e.target.value)}
@@ -135,7 +139,7 @@ const Register = () => {
               // input="tel"
               id="phone"
               name="phone"
-              className="bg-gray-200 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
               value={phonenumber}
               placeholder="xxx-xxx-xxxx"
               onChange={(e) => setPhonenumber(e.target.value)}
@@ -146,9 +150,9 @@ const Register = () => {
           <div className="flex justify-between items-center">
             <button
               type="submit"
-              className="outline-none  bg-[#6D31ED] rounded-lg text-white px-4 py-2 "
+              className="outline-none bg-orange-600 text-black font-bold px-4 py-2 rounded uppercase"
             >
-              Send Message
+              Submit
             </button>
           </div>
         </form>
