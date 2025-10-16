@@ -2,6 +2,7 @@
 @layer base {
   html {
     @apply font-manrope;
+    background-color: #000;
   }
 }
 @tailwind components;

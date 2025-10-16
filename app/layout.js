@@ -19,23 +19,19 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body>
-        <div className="flex flex-col flex-1 min-h-screen justify-between relative">
-          <Navbar
-            routes={routes}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-          <main className="flex-grow overflow-hidden pt-20 flex items-stretch">
-            {children}
-          </main>
-          <Footer
-            routes={routes}
-            activeTab={activeTab}
-            handleTabClick={handleTabClick}
-          />
-        </div>
+        <Navbar
+          routes={routes}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
+        {children}
+        <Footer
+          routes={routes}
+          activeTab={activeTab}
+          handleTabClick={handleTabClick}
+        />
       </body>
     </html>
   );

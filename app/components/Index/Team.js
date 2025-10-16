@@ -23,50 +23,60 @@ export const Team = () => {
       img: "/indian.jpeg",
     },
   ];
-  const renderPersonCard = (person) => {
-    return (
-      <div className="p-4 border-2 border-solid border-gray-200 rounded-lg">
-        <div className="flex flex-row space-x-10 justify-center">
-          <div className="flex flex-col space-y-4">
-            <h2 className="font-semibold">
-              {person.name}
-              <span className="pl-3 font-normal text-sm text-[#6D31ED]">
-                {person.title}
-              </span>
-            </h2>
-            <p className="text-sm grow">{person.experience}</p>
-            <div className="text-sm">Hometown: {person.hometown}</div>
-          </div>
-          <div>
-            <Image
-              src={person.img}
-              height={350}
-              width={270}
-              className="rounded-lg"
-            />
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   return (
-    <div className="py-12">
-      <h1 className="text-4xl font-bold text-center py-8">Meet The Team</h1>
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-center mb-8">
-          <div className="max-w-2xl">{renderPersonCard(people[0])}</div>
+    <section className="relative bg-zinc-950 py-24 md:py-32">
+      <div className="container mx-auto px-6">
+        <div className="mb-20 flex items-end justify-between">
+          <div>
+            <div className="mb-6 flex items-center gap-6">
+              <div className="h-1 w-16 bg-orange-600" />
+              <span className="font-heading text-sm font-bold uppercase tracking-wider text-orange-600">
+                The Team
+              </span>
+            </div>
+            <h2 className="font-heading text-5xl font-black leading-tight tracking-tighter text-white md:text-7xl">
+              MEET THE
+              <br />
+              <span className="text-orange-600">COACHES</span>
+            </h2>
+          </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:space-x-8 space-y-4 lg:space-y-0 justify-center">
-          <div className="flex-1 max-w-md lg:max-w-lg">
-            {renderPersonCard(people[1])}
-          </div>
-          <div className="flex-1 max-w-md lg:max-w-lg">
-            {renderPersonCard(people[2])}
-          </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {people.map((person) => (
+            <div
+              key={person.name}
+              className="group relative overflow-hidden rounded-lg border-2 border-white/10 bg-black transition-all duration-300 hover:border-orange-600 hover:shadow-2xl hover:shadow-orange-600/20"
+            >
+              <div className="relative aspect-square overflow-hidden bg-zinc-900">
+                <div className="h-full w-full rounded-none">
+                  <Image
+                    src={person.img}
+                    alt={person.name}
+                    className="object-cover"
+                    width={500}
+                    height={500}
+                  />
+                </div>
+                <div className="absolute inset-0 bg-orange-600/20 opacity-0 transition-opacity group-hover:opacity-100" />
+              </div>
+
+              <div className="p-6">
+                <h3 className="mb-1 font-heading text-xl font-black uppercase tracking-tight text-white">
+                  {person.name}
+                </h3>
+                <p className="mb-3 font-heading text-xs font-bold uppercase tracking-wider text-orange-600">
+                  {person.title}
+                </p>
+                <p className="text-sm leading-relaxed text-white/60">
+                  {person.experience}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
