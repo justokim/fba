@@ -12,12 +12,14 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
+  const [hearAboutUs, setHearAboutUs] = useState("");
 
   const clearForm = () => {
     setMessage("");
     setName("");
     setSubject("");
     setEmail("");
+    setHearAboutUs("");
   };
 
   const submitForm = (e) => {
@@ -28,6 +30,7 @@ const Contact = () => {
       email: email,
       message: message,
       subject: subject,
+      hearAboutUs: hearAboutUs,
     };
 
     try {
@@ -62,7 +65,7 @@ const Contact = () => {
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Name</label>
             <input
-              className="bg-black border border-white/20 outline-none p-1 rounded px-2"
+              className="bg-black border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Your full name"
@@ -72,7 +75,7 @@ const Contact = () => {
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Email *</label>
             <input
-              className="bg-black border border-white/20 outline-none p-1 rounded px-2"
+              className="bg-black border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
               value={email}
               type="email"
               required
@@ -84,7 +87,7 @@ const Contact = () => {
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Subject</label>
             <input
-              className="bg-black border border-white/20 outline-none p-1 rounded px-2"
+              className="bg-black border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               placeholder="Subject"
@@ -94,11 +97,21 @@ const Contact = () => {
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Message</label>
             <textarea
-              className="bg-black border border-white/20 outline-none p-1 rounded px-2 resize-none"
+              className="bg-black border border-white/20 outline-none p-1 rounded px-2 resize-none placeholder:text-white/30"
               rows={3}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Tell us how we can help..."
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label className="text-lg pb-0.5">How did you hear about us?</label>
+            <input
+              className="bg-black border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
+              value={hearAboutUs}
+              onChange={(e) => setHearAboutUs(e.target.value)}
+              placeholder="e.g., Friend, Social Media, Website, etc."
             />
           </div>
 

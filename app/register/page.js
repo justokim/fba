@@ -15,6 +15,7 @@ const Register = () => {
   const [age, setAge] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [grade, setGrade] = useState("");
+  const [hearAboutUs, setHearAboutUs] = useState("");
 
   const clearForm = () => {
     setAge("");
@@ -23,6 +24,7 @@ const Register = () => {
     setEmail("");
     setGrade("");
     setPhonenumber("");
+    setHearAboutUs("");
   };
 
   const validateEmail = (email) => {
@@ -43,6 +45,7 @@ const Register = () => {
       age: age,
       grade: grade,
       phoneNumber: phonenumber,
+      hearAboutUs: hearAboutUs,
     };
 
     try {
@@ -79,7 +82,7 @@ const Register = () => {
             <input
               type="email"
               required
-              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your.email@example.com"
@@ -97,7 +100,7 @@ const Register = () => {
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Parent Name *</label>
             <input
-              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
               value={parentname}
               onChange={(e) => setParentname(e.target.value)}
               required
@@ -107,7 +110,7 @@ const Register = () => {
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Child Name *</label>
             <input
-              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
               value={childname}
               onChange={(e) => setChildname(e.target.value)}
               required
@@ -117,7 +120,7 @@ const Register = () => {
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Age</label>
             <input
-              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
               value={age}
               onChange={(e) => setAge(e.target.value)}
               placeholder="Age"
@@ -126,7 +129,7 @@ const Register = () => {
           <div className="flex flex-col">
             <label className="text-lg pb-0.5">Grade</label>
             <input
-              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
               value={grade}
               placeholder="4th grade"
               onChange={(e) => setGrade(e.target.value)}
@@ -139,11 +142,21 @@ const Register = () => {
               // input="tel"
               id="phone"
               name="phone"
-              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2"
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
               value={phonenumber}
               placeholder="xxx-xxx-xxxx"
               onChange={(e) => setPhonenumber(e.target.value)}
               // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label className="text-lg pb-0.5">How did you hear about us?</label>
+            <input
+              className="bg-black/90 border border-white/20 outline-none p-1 rounded px-2 placeholder:text-white/30"
+              value={hearAboutUs}
+              onChange={(e) => setHearAboutUs(e.target.value)}
+              placeholder="e.g., Friend, Social Media, Website, etc."
             />
           </div>
 
