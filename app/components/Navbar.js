@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 const Navbar = ({ routes }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,20 +10,13 @@ const Navbar = ({ routes }) => {
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
       <nav className="container mx-auto flex h-20 items-center justify-between px-6">
-        <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded bg-orange-600 transition-transform group-hover:scale-105">
-            <span className="font-heading text-2xl font-black text-black">
-              F
-            </span>
-          </div>
-          <div className="hidden flex-col leading-none sm:flex">
-            <span className="font-heading text-sm font-black tracking-tight text-white">
-              FREMONT
-            </span>
-            <span className="font-heading text-xs font-bold tracking-wider text-orange-600">
-              BASKETBALL
-            </span>
-          </div>
+        <Link href="/" className="group">
+          <Image
+            src="/logoLight.png"
+            alt="Fremont Basketball Academy"
+            width={100}
+            height={100}
+          />
         </Link>
 
         {/* desktop */}
